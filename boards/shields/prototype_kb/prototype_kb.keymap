@@ -9,6 +9,17 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
+    behaviors {
+        lra0_bump: lra0_bump {
+            compatible = "zmk,output-behavior-generic"; 
+            #binding-cells = <0>;
+            device = <&lra0>;
+            /* force will be convrt to waveformm effect from DRV2605 library */
+            /* NOTE: <7> is Soft Bump at 100% */
+            force = <7>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -16,8 +27,8 @@
             bindings = <
                 &kp X
                 &kp Z
-                &kp Y
+                &lra0_bump
             >;
         };
-    };
+    };  
 };
