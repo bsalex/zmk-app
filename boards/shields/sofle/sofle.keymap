@@ -506,7 +506,7 @@
 
         docs {
             bindings = <
-&trans  &trans  &trans                 &trans         &trans             &trans                                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LG(LA(1))  &kp LG(LA(2))                 &kp LG(LA(3))         &kp LG(LA(4))             &trans                                    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &docs_wrap_text_macro  &trans         &kp LG(BACKSLASH)  &trans                                    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans                 &trans         &trans             &trans                                    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans                 &kp LG(LA(M))  &paste_link_macro  &insert_bookmark_macro  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &kp LG(ENTER)
