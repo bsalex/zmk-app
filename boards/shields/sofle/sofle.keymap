@@ -262,7 +262,7 @@
             require-prior-idle-ms = <200>;
         };
 
-				delayed_tap_once_haptic_on_hold: delayed_tap_once_haptic_on_hold {
+        delayed_tap_once_haptic_on_hold: delayed_tap_once_haptic_on_hold {
             compatible = "zmk,behavior-hold-tap";
             label = "DELAYED_TAP_ONCE_ON_HOLD";
             bindings = <&key_once_haptic_macro>, <&kp>;
@@ -407,7 +407,7 @@
             bindings = <&macro_param_1to1>, <&kp MACRO_PLACEHOLDER>;
         };
 
-				key_once_haptic_macro: key_once_haptic_macro {
+        key_once_haptic_macro: key_once_haptic_macro {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings = <&macro_param_1to1>, <&kp MACRO_PLACEHOLDER>, <&kp F24>;

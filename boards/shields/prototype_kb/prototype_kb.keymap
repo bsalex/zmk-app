@@ -64,7 +64,7 @@
             device = <&lra0>;
             /* force will be convrt to waveformm effect from DRV2605 library */
             /* NOTE: <7> is Soft Bump at 100% */
-            force = <23>;
+            force = <3>;
         };
 
         lra0_buzz: lra0_buzz {
@@ -125,7 +125,7 @@
             bindings = <
                 &kp W
                 &kp Q
-                &delayed_tap_once_on_hold X N1
+                &key_once_macro X
             >;
         };
     };  
