@@ -296,37 +296,33 @@
             all-state;
         };
 
-        mouse_move_up: shift_esc {
+        mouse_move_up: mouse_move_up {
             compatible = "zmk,behavior-mod-morph";
-            label = "SHIFT_ESC";
-            bindings = <MOVE_UP>, <MOVE_Y(-2000)>;
+            bindings = <&mmv MOVE_UP>, <&mmv MOVE_Y(-2000)>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
         };
 
-        mouse_move_right: shift_esc {
+        mouse_move_right: mouse_move_right {
             compatible = "zmk,behavior-mod-morph";
-            label = "SHIFT_ESC";
-            bindings = <MOVE_RIGHT>, <MOVE_X(2000)>;
+            bindings = <&mmv MOVE_RIGHT>, <&mmv MOVE_X(2000)>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
         };
 
-        mouse_move_down: shift_esc {
+        mouse_move_down: mouse_move_down {
             compatible = "zmk,behavior-mod-morph";
-            label = "SHIFT_ESC";
-            bindings = <MOVE_DOWN>, <MOVE_Y(2000)>;
+            bindings = <&mmv MOVE_DOWN>, <&mmv MOVE_Y(2000)>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
         };
 
-        mouse_move_left: shift_esc {
+        mouse_move_left: mouse_move_left {
             compatible = "zmk,behavior-mod-morph";
-            label = "SHIFT_ESC";
-            bindings = <MOVE_LEFT>, <MOVE_X(-2000)>;
+            bindings = <&mmv MOVE_LEFT>, <&mmv MOVE_X(-2000)>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
