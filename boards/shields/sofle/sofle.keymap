@@ -279,7 +279,7 @@
             device = <&lra0>;
             /* force will be convrt to waveformm effect from DRV2605 library */
             /* NOTE: <7> is Soft Bump at 100% */
-            force = <24>;
+            force = <2>;
         };
 
         lra0_bump_listener: lra0_bump_listener {
@@ -298,7 +298,7 @@
 
         mouse_move_up: mouse_move_up {
             compatible = "zmk,behavior-mod-morph";
-            bindings = <&mmv MOVE_UP>, <&mmv MOVE_Y(-2000)>;
+            bindings = <&mouse_move_up_slow>, <&mmv MOVE_Y(-3000)>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
@@ -306,7 +306,7 @@
 
         mouse_move_right: mouse_move_right {
             compatible = "zmk,behavior-mod-morph";
-            bindings = <&mmv MOVE_RIGHT>, <&mmv MOVE_X(2000)>;
+            bindings = <&mouse_move_right_slow>, <&mmv MOVE_X(3000)>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
@@ -314,7 +314,7 @@
 
         mouse_move_down: mouse_move_down {
             compatible = "zmk,behavior-mod-morph";
-            bindings = <&mmv MOVE_DOWN>, <&mmv MOVE_Y(2000)>;
+            bindings = <&mouse_move_down_slow>, <&mmv MOVE_Y(3000)>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
@@ -322,10 +322,42 @@
 
         mouse_move_left: mouse_move_left {
             compatible = "zmk,behavior-mod-morph";
-            bindings = <&mmv MOVE_LEFT>, <&mmv MOVE_X(-2000)>;
+            bindings = <&mouse_move_left_slow>, <&mmv MOVE_X(-3000)>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
+        };
+
+        mouse_move_up_slow: mouse_move_up_slow {
+            compatible = "zmk,behavior-mod-morph";
+            bindings = <&mmv MOVE_UP>, <&mmv MOVE_Y(-400)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+        };
+
+        mouse_move_right_slow: mouse_move_right_slow {
+            compatible = "zmk,behavior-mod-morph";
+            bindings = <&mmv MOVE_RIGHT>, <&mmv MOVE_X(400)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+        };
+
+        mouse_move_down_slow: mouse_move_down_slow {
+            compatible = "zmk,behavior-mod-morph";
+            bindings = <&mmv MOVE_DOWN>, <&mmv MOVE_Y(400)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+        };
+
+        mouse_move_left_slow: mouse_move_left_slow {
+            compatible = "zmk,behavior-mod-morph";
+            bindings = <&mmv MOVE_LEFT>, <&mmv MOVE_X(-400)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
         };
     };
 
