@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 1000  // default: 600
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 800  // default: 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 10    // default: 10
 
 #include <behaviors.dtsi>
@@ -295,6 +295,42 @@
             /* ensure to stop on-going LRA effect immediately on key released */
             all-state;
         };
+
+        mouse_move_up: shift_esc {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SHIFT_ESC";
+            bindings = <MOVE_UP>, <MOVE_Y(-2000)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        mouse_move_right: shift_esc {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SHIFT_ESC";
+            bindings = <MOVE_RIGHT>, <MOVE_X(2000)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        mouse_move_down: shift_esc {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SHIFT_ESC";
+            bindings = <MOVE_DOWN>, <MOVE_Y(2000)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        mouse_move_left: shift_esc {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SHIFT_ESC";
+            bindings = <MOVE_LEFT>, <MOVE_X(-2000)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
     };
 
     macros {
@@ -455,8 +491,8 @@
             bindings = <
 &trans  &trans  &trans  &trans    &trans    &trans                    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans    &trans    &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans    &trans    &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans    &trans    &trans  &none     &none   &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans    &delayed_tap_once_haptic_on_hold LC(F) F    &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &delayed_tap_once_haptic_on_hold LC(Z) Z  &delayed_tap_once_haptic_on_hold LC(X) X  &delayed_tap_once_haptic_on_hold LC(C) C    &delayed_tap_once_haptic_on_hold LC(V) V    &trans  &none     &none   &trans  &trans  &trans  &trans  &trans  &trans
                 &trans  &kp LGUI  &kp LALT  &trans  &trans    &trans  &trans  &trans  &trans  &trans
             >;
         };
@@ -507,7 +543,7 @@
         docs {
             bindings = <
 &trans  &kp LG(LA(N1))  &kp LG(LA(N2))                 &kp LG(LA(N3))         &kp LG(LA(N4))             &trans                                    &trans  &trans  &trans  &trans  &kp LG(LA(N0))  &trans
-&trans  &trans  &docs_wrap_text_macro  &trans         &kp LG(BACKSLASH)  &trans                                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &docs_wrap_text_macro  &kp LG(LC(SPACE))         &kp LG(BACKSLASH)  &trans                                    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans                 &trans         &trans             &trans                                    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans                 &kp LG(LA(M))  &paste_link_macro  &insert_bookmark_macro  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &kp LG(ENTER)
                 &trans                 &trans         &trans             &trans                  &trans    &trans  &trans  &trans  &trans  &trans
@@ -537,8 +573,8 @@
         pointer {
             bindings = <
 &trans  &trans  &trans     &trans     &trans     &trans                    &kp PAGE_UP     &msc SCRL_LEFT  &msc SCRL_RIGHT  &trans           &trans  &trans
-&trans  &trans  &trans     &trans     &trans     &trans                    &msc SCRL_UP    &mkp LCLK       &mmv MOVE_UP     &trans           &trans  &trans
-&trans  &trans  &mkp RCLK  &mkp MCLK  &mkp LCLK  &trans                    &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN   &mmv MOVE_RIGHT  &trans  &trans
+&trans  &trans  &trans     &trans     &trans     &trans                    &msc SCRL_UP    &mkp LCLK       &mouse_move_up     &trans           &trans  &trans
+&trans  &trans  &mkp RCLK  &mkp MCLK  &mkp LCLK  &trans                    &msc SCRL_DOWN  &mouse_move_left  &mouse_move_down   &mouse_move_right  &trans  &trans
 &trans  &trans  &trans     &trans     &trans     &trans  &trans    &trans  &kp PAGE_DOWN   &trans          &trans           &trans           &trans  &trans
                 &trans     &trans     &trans     &trans  &trans    &trans  &trans          &trans          &trans           &trans
             >;
