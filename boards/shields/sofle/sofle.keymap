@@ -511,7 +511,7 @@
                                                                   &kp LCTRL                          &kp LALT                           &kp LEFT_GUI                       &lt 2 SPACE                        &lt 6 SPACE    &lt 5 SPACE  &lt 3 SPACE                        &mo 9                              &only_hold LA(Y) 0           &mo 4
             >;
 
-            sensor-bindings = <&inc_dec_kp DOWN UP>;
+            sensor-bindings = <&inc_dec_kp UP DOWN>;
         };
 
         linux {
@@ -523,6 +523,8 @@
 &trans  &delayed_tap_once_haptic_on_hold LC(Z) Z  &delayed_tap_once_haptic_on_hold LC(X) X  &delayed_tap_once_haptic_on_hold LC(C) C    &delayed_tap_once_haptic_on_hold LC(V) V    &trans  &none     &none   &trans  &trans  &trans  &trans  &trans  &trans
                 &trans  &kp LGUI  &kp LALT  &trans  &trans    &trans  &trans  &trans  &trans  &trans
             >;
+
+            sensor-bindings = <&inc_dec_kp UP DOWN>;
         };
 
         symbols_2 {
@@ -545,6 +547,8 @@
 &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans     &trans        &kp LA(DOWN)  &trans         &trans   &kp LS(ENTER)
                 &trans  &trans  &trans  &trans  &trans    &trans  &trans     &trans        &trans        &trans
             >;
+
+            sensor-bindings = <&inc_dec_kp LEFT RIGHT>;
         };
 
         connectivity {
